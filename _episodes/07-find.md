@@ -311,7 +311,7 @@ Miscellaneous:
 > ## Tracking a Species
 >
 > Leah has several hundred
-> data files saved in one directory, each of which is formatted like this:
+> data files saved in a directory named `animal-counts/`, each of which is formatted like this:
 >
 > ~~~
 > 2013-11-05,deer,5
@@ -322,8 +322,17 @@ Miscellaneous:
 > ~~~
 > {: .source}
 >
+> If one of the data files is named `animals.csv` and Leah searches for the word "rabbit" using grep, the output will include the filename of the line it matches and the two fields will be separated by a semicolon:
+> ~~~
+> animal-counts/animals.csv:2012-11-05,rabbit,22
+> animal-counts/animals.csv:2012-11-06,rabbit,19
+> ~~~
+> {: .source}
+>  
 > She wants to write a shell script that takes a species as the first command-line argument
-> and a directory as the second argument. The script should return one file called `species.txt`
+> and a directory as the second argument. 
+> 
+> The script should return one file called `species.txt`
 > containing a list of dates and the number of that species seen on each date.
 > For example using the data shown above, `rabbit.txt` would contain:
 >
